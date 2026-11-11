@@ -1,0 +1,10 @@
+{
+  "project": "ECHO",
+  "model_base": "REPLACE_WITH_LICENSED_MODEL",
+  "dataset_manifest": "REPLACE_WITH_REVIEWED_DATASET_MANIFEST",
+  "method": "supervised_fine_tuning",
+  "compute": "authorized_cloud_gpu",
+  "epochs": 1,
+  "evaluation_required": true,
+  "publish_only_if_passed": true
+}

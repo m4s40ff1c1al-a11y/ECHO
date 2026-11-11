@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: echo-v1
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_SECRET
+        generateValue: true
+      - key: DATA_ENCRYPTION_KEY
+        sync: false
+      - key: AI_BASE_URL
+        value: https://api.openai.com/v1
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        sync: false
+      - key: DB_PATH
+        value: /srv/echo/persist/echo.db
+      - key: UPLOAD_DIR
+        value: /srv/echo/persist/uploads
+      - key: IMAGE_API_KEY
+        sync: false
+      - key: STT_API_KEY
+        sync: false
+      - key: TTS_API_KEY
+        sync: false
+    disk:
+      name: echo-data
+      mountPath: /srv/echo/persist
+      sizeGB: 1
